@@ -5,9 +5,8 @@ const bodyParser= require('body-parser');
 
 const hbs = require('hbs');
 
-
-
 const app = express();
+const port = process.env.PORT ||3000;
 
 hbs.registerPartials(__dirname+'/views/partials');
 app.set('view engine','hbs');
@@ -73,6 +72,6 @@ hbs.registerHelper('getfullYear',()=>{
 
 
 
-app.listen(3000,()=>{
-console.log('you are connected to the server...')
+app.listen(port,()=>{
+console.log(`you are connected to the server..on port. ${port}`)
 });
